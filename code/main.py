@@ -8,13 +8,15 @@ import os
 
 
 def menu():
+
     os.system("cls")
     print('-' * 42)
-    print('MENU'.center(42))
+    print('Jogo da Velha'.center(42))
     print('-' * 42)
     print('0 - Sair')
     print('1 - Jogar')
     print('-' * 42)
+
     while True:
         pergunta = leiaint('Escolha: ')
         if pergunta >= 0 and pergunta <= 1:
@@ -35,13 +37,10 @@ def menu():
 
 
 def iniciar():
+
     while True:
         os.system("cls")
-        print('-' * 42)
-        print('Jogo da Velha'.center(42))
-        print('-' * 42)
         matriz()
-        print('-' * 42)
         while True:
             linha = leiaint('Em qual linha desejar marcar? ')-1
             if linha >= 0 and linha <= 2:
@@ -60,20 +59,21 @@ def iniciar():
         jogoX = verificarX()
         if jogoX == True and X == True:
             marcarO()
-            jogoO = verificarO()
+            jogoO = verificarO()  
+
         tam = verificartam()
         if tam == True:
-            print('O jogo empatou!')
+            print('O jogo empatou! :/')
             print('-' * 42)
             sleep(3.5)
             menu()
         if jogoX == False:
-            print('Você ganhou! Parabéns!')
+            print('Você ganhou! :)')
             print('-' * 42)
             sleep(3.5)
             menu()
         if jogoO == False:
-            print('A máquina ganhou! Ops!')
+            print('A máquina ganhou! :(')
             print('-' * 42)
             sleep(3.5)
             menu()
@@ -82,12 +82,12 @@ def iniciar():
         
         
 def matriz():
-    print()
+    print('-' * 42)
     for linha in range(3):
         for c in range(3):
             print(f'     [{matrizlista[linha][c]:^5}]', end='')
         print()
-    print()
+    print('-' * 42)
 
 
 def marcarX(linha, coluna):
